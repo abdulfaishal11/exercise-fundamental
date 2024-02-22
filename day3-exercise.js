@@ -61,12 +61,12 @@ let currentNumber = 100000
 
 
 // 05 -  Remove the first occurrence of a given “search string” from a string
-// let string = "Hello World";
-// let splt = string.split('')
-// // console.log(splt)
-// let deleteSplt = (delete splt[1], delete splt[2], delete splt[3]);
-// let join = splt.join('')
-// console.log(join);
+let string = "Hello World";
+let splt = string.split('')
+// console.log(splt)
+let deleteSplt = (delete splt[1], delete splt[2], delete splt[3]);
+let join = splt.join('')
+console.log(join);
 
     //cara 2.
     const words = "Hello Word";
@@ -88,18 +88,18 @@ let lowerLetter2 = letter.slice(7)
 
 console.log((firstCapitalize+lowerLetter) + (firstCapitalize2+lowerLetter2)) 
 
-    // // cara 2 dengan loop for
-    // const inputt = "hello world"
-    // let wordss = inputt.split(" ");
+    // cara 2 dengan loop for
+    const inputt = "hello world"
+    let wordss = inputt.split(" ");
 
-    // console.log(wordss)
+    console.log(wordss)
 
-    // for(let i=0 ; i<wordss.length ; i++){
-    //     wordss[i] = wordss[i][0].toUpperCase() + wordss[i].slice(1);
+    for(let i=0 ; i<wordss.length ; i++){
+        wordss[i] = wordss[i][0].toUpperCase() + wordss[i].slice(1);
 
-    // }
-    // console.log(wordss);
-    // console.log(wordss.join(" "));
+    }
+    console.log(wordss);
+    console.log(wordss.join(" "));
 
 // 07 - Reverse a string.
 let strings = "hello"
@@ -197,6 +197,17 @@ let changeA = str.replaceAll('a','*').replace('A','*');
 console.log(changeA)
 
     //Cara 2 menggunakan looping
+const modifiedStr = "*";
+let result = "";
+
+for (let i = 0 ; i < str.length; i++) {
+    if (str[i] === 'a' || str[i] ==="A") {
+        result += modifiedStr
+    } else {
+        result  += str[i]
+    }
+}
+console.log(result);
 
 
 

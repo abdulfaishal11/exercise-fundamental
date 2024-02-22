@@ -32,21 +32,23 @@
 // console.log(isPrime);
 
 // No.4 
-// const num = 5;  //CARA1
-// const result = (num*(num+1)/2);
-// console.log(result);
+const num = 5;  //CARA1
+const result = (num*(num+1)/2);
+console.log(result);
 
-// const angka = 5;
-// let sum = 0;
-// let massage = ""; //untuk menampung hasilnya
+const angka = 5;
+let sum = 0;
+let massage = ""; //untuk menampung hasilnya
 
-// for(let i=1 ; i<=angka ; i++) {
-//     sum +=i;
+for(let i=1 ; i<=angka ; i++) {
+    sum +=i;
+    console.log(angka);
 
-//     massage +=i + (i !==angka ? "+" : "");
-// }
-// console.log(sum);
-// console.log(massage + "=" + sum)
+    massage +=i + (i !==angka ? "+" : "");
+    console.log(massage);
+}
+console.log(sum);
+console.log(massage + "=" + sum)
 
 // No.5 --> faktorial
 // const num =5;
