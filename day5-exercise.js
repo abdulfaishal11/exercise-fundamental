@@ -5,64 +5,42 @@
 //     const lowest = Math.min(join)
 //     console.log(lowest)
 
-//With Function => My solve
+//With Function
 
-// function number1(minimum) {
-//   minimum.sort((a, b) => {
-//     return a - b;
-//   });
-//   let findMin = minimum.find((min) => {
-//     if (min <= minimum[0]) return min;
-//   });
-//   return findMin;
-// }
-// function number2(maximum) {
-//   maximum.sort((a, b) => {
-//     return b - a;
-//   });
-//   let findMax = maximum.find((max) => {
-//     if (max <= maximum[0]) return max;
-//   });
-//   return findMax;
-// }
-// function number3(average) {
-//   let num = 0;
-//   for (i = 0; i < average.length; i++) {
-//     num += average[i];
-//   }
-//   let averages = num / average.length;
-//   return averages;
-// }
+function number1(minimum) {
+  minimum.sort((a, b) => {
+    return a - b;
+  });
+  let findMin = minimum.find((min) => {
+    if (min <= minimum[0]) return min;
+  });
+  return findMin;
+}
+function number2(maximum) {
+  maximum.sort((a, b) => {
+    return b - a;
+  });
+  let findMax = maximum.find((max) => {
+    if (max <= maximum[0]) return max;
+  });
+  return findMax;
+}
+function number3(average) {
+  let num = 0;
+  for (i = 0; i < average.length; i++) {
+    num += average[i];
+  }
+  let averages = num / average.length;
+  return averages;
+}
 
-// const lowest = number1([12, 5, 23, 18, 4, 45, 32]);
-// const highest = number2([12, 5, 23, 18, 4, 45, 32]);
-// const average = number3([12, 5, 23, 18, 4, 45, 32]);
+const lowest = number1([12, 5, 23, 18, 4, 45, 32]);
+const highest = number2([12, 5, 23, 18, 4, 45, 32]);
+const average = number3([12, 5, 23, 18, 4, 45, 32]);
 
-// console.log(lowest);
-// console.log(highest);
-// console.log(average);
-
-// Lecture solve :
-
-
-// const arr2 = [12, 5, 23, 18, 4, 45, 32];
-
-// function array(num) {
-//     const lowest = Math.min(...num);
-//     const highest = Math.max(...num);
-//     let sum = 0;
-
-//     for (let i = 0; i < num.length; i++) {
-//         sum += num[i];
-//     }
-
-//     let average = sum / num.length;
-//     average = average.toFixed(4);
-
-//     return { lowest, highest, average };
-// }
-
-// console.log(array(arr2));
+console.log(lowest);
+console.log(highest);
+console.log(average);
 
 //  02. takes an array of words and returns a string by concatenating the words in the array, separated by commas and - the last word - by an 'and'.
 
@@ -74,41 +52,6 @@ function string(fruit) {
 }
 let result = string(["apple", "banana", "cherry", "date"]);
 console.log(result);
-
-//lecture solve : 
-//cara 1 : 
-const arr1 = ["apple", "banana", "cherry", "date"];
-
-function concentenatedString(arr1) {
-
-    const lastWord = arr1.pop();
-    console.log(arr1);
-    console.log(lastWord); //menghapus date
-    const result = arr1.join(",") + " and " + lastWord;
-
-    return result;
-  }
-
-console.log(concentenatedString(arr1));
-
-
-//cara 2 : 
-const arr = ["apple", "banana", "cherry", "date"];
-
-function concStr(fruit) {
-  if (fruit.length === 0) {
-    return "";
-  }
-
-  const lastWord = fruit.slice(-1);
-  const otherWords = fruit.slice(0, -1);
-
-  const result = otherWords.join(",") + (otherWords.length > 0 ? ", and " : "") + lastWord;
-
-  return result;
-}
-
-console.log(concStr(arr));
 
 // 03. Split a string and convert it into an array of words
 //Menggunakan built in method
@@ -145,11 +88,8 @@ let resulte = split("Hello World");
                 const result = []
                 const maxLength = Math.max(arr1.length,arr2.length)
 
-                console.log(maxLength);
-
-                for(let i=0 ; i< maxLength; i++) {
+                for(let i=0 ; i< maxLength ; i++) {
                     const sum = (arr1[i] || 0) + (arr2[i] || 0)
-                    console.log(sum);
                     result.push(sum)
                 }
                 return result
@@ -157,21 +97,14 @@ let resulte = split("Hello World");
 
             console.log(calculateArray([1,2,3,5] , [1,2,3]));
 
-// 05. Write a function that adds an element to the end of an array. However, the element should only be added if it is not already in the array.
-// a. Example : arr = [1, 2, 3, 4], newElement = 4 → [1, 2, 3, 4]
-// b. Example : arr = [1, 2, 3, 4], newElement = 7 → [1, 2, 3, 4, 7]
-
-let ar = [1, 2, 3, 4];
-
-function addArray(data) {
-  ar.push(data);
-  return ar;
+// 05. Adds an element to the end of an array. However, the element should only be added if it is not already in the array.
+function newArray(array, element) {
+  const newElement = array.push(element);
+  console.log(array);
+  element;
 }
-
-console.log(addArray(5));
-console.log(addArray(7));
-console.log(addArray(8));
-
+const newElement = newArray([1, 2, 3, 4], 5);
+console.log(newElement);
 
 // 06.  Remove all odd numbers in an array and return a new array that contains even numbers only
 // function number (numbers) {
@@ -229,55 +162,39 @@ console.log(resl);
 
 function duplicate(values) {
   for (i = 0; i < values.length; i++) {
-    if (values[i] - i === 0) return values[i];
+    if (values[i] - i === 0) return i;
   }
 }
 const dup = duplicate([1, 2, 2, 2, 3, 3, 4, 5, 5]);
 console.log(dup);
 
 //  10.  find the difference in 2 given array
-// function array(arr1, arr2) {
-//   const combine = arr1.concat(arr2);
-//   console.log(combine);
-//   const different = combine.filter((e, i) => {
-//     combine.findIndex((a) => {
-//       (a.e === e.e) === i;
-//       return combine;
-//     });
-//   });
-// }
-// const results = array([1, 2, 3, 4, 5], [3, 4, 5, 6, 7]);
-// console.log(results);
-
-// 5. Write a function to find the difference in 2 given array
-// a. Example : arr1 = [1, 2, 3, 4, 5], arr2 = [3, 4, 5, 6, 7] → [1, 2, 6, 7]
-
-const a = [1, 2, 3, 4, 5];
-const b = [3, 4, 5, 6, 7];
-
-function findDiff(a, b) {
-  const diff1 = a.filter(element => !b.includes(element));
-  const diff2 = b.filter(element => !a.includes(element));
-
-  return diff1.concat(diff2);
+function array(arr1, arr2) {
+  const combine = arr1.concat(arr2);
+  console.log(combine);
+  const different = combine.filter((e, i) => {
+    combine.findIndex((a) => {
+      (a.e === e.e) === i;
+      return combine;
+    });
+  });
 }
-
-console.log(findDiff(a, b));
+const results = array([1, 2, 3, 4, 5], [3, 4, 5, 6, 7]);
+console.log(results);
 
 //  11. Write a function that will return primitive data types only
 
-// arr = [1, [], undefined, {}, "string", {}, []];
-// a. The function will return [1, undefined, “string”]
+const dataTypes = [1, [], undefined, {}, "string", {}, []];
+const primitiveData = dataTypes.filter((e) => {
+  if (dataTypes === "object") return e;
+});
+console.log(primitiveData);
 
-arrs = [1, [], undefined, {}, "string", {}, []];
-
-function filter(arrs) {
-  return arrs.filter(item => 
-    typeof item !== "object"
-  );
-}
-
-console.log(filter(arrs));
+let sd = {
+  makan: 12,
+  minim: 12,
+};
+console.log(typeof sd);
 
 //No.14 Write a function from the below array of number that will return sum of duplicate values. let
 // arr = [10, 20, 40, 10, 50, 30, 10, 60, 10];
@@ -295,7 +212,6 @@ console.log(filter(arrs));
             if (duplicateValues.includes(item)) {
                 result += item;
             }
-            console.log(result);
         }
         return result
     }
@@ -303,26 +219,26 @@ console.log(filter(arrs));
 
 // No.15 Write a game of rock, paper, scissor function that will return 'Win' or 'Lose'. The function will randomly pick between rock, paper, or scissor.
         //  a. Example: if you throw a rock as an argument and the function pick a scissor then it will return 'Win'
+    function gameSuit(playerChoice) {
+        const choices = ["baru", "gunting", "kertas"];
+        const compChoice = choices[Math.floor(Math.random() * 2,9)]
 
-function playGame(playerMove) {
-  const pick = ["rock", "paper", "scissors"];
+        if(!choices.includes(playerChoice)) {
+            return "wrong input"
+        }
 
-  const computerMove = pick[Math.floor(Math.random() * 2.9)];
-  console.log(computerMove);
+        if(playerChoice === compChoice) {
+            return "draw"
+        }
+        if(
+            (playerChoice === "batu" && compChoice === "gunting") ||
+            (playerChoice === "gunting" && compChoice === "kertas") ||
+            (playerChoice === "kertas" && compChoice === "batu")
+            
+        ) {
+            return "win"
+        }
+        return "lose"
+    }
 
-  if (playerMove === computerMove) {
-    return "Tie";
-  } else if (
-    (playerMove === "rock" && computerMove === "scissors") ||
-    (playerMove === "paper" && computerMove === "rock") ||
-    (playerMove === "scissors" && computerMove === "paper")
-  ) {
-    return "Win";
-  } else {
-    return "Lose";
-  }
-}
-
-console.log(playGame("paper"));
-console.log(playGame("scissors"));
-console.log(playGame("rock"))
+    console.log(gameSuit("gunting"))

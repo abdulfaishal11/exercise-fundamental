@@ -25,6 +25,7 @@ class Train {
     constructor(passenger, maxCapacity = 10) {
       this.passenger = ["masinis"];
       this.maxCapacity = maxCapacity;
+      
   
     }
   
@@ -120,7 +121,7 @@ function PhoneNumber(input) {
     
     for(let i=0 ; i<input.length ; i++) {
         if(input[i] < Number('0') || input[i] > ('9')) {
-            `return 'Invalid Phone Number.`
+            return 'Invalid Phone Number.'
         }
     }
 
@@ -131,6 +132,7 @@ function PhoneNumber(input) {
     console.log(input.split(""));
     input.split("").forEach((item) => {
         template = template.replace("x",item)
+        console.log(template);
     })
 
     return template

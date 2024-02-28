@@ -15,14 +15,17 @@ class Queue {
         this.#container = [];
     }
 
-    enqueque (element) {
+    enqueque (a) {
         //masukan value baru dalam antrian
-        return this.#container.push(element);
+        this.#container.push(a);
+        return `antrian ${a} telah ditambahkan`
     }
 
-    dequeeue() {
+    dequeeue(a) {
         //Menghilangkan value paling depan dalam antrian
-        return this.#container.shift()
+        this.#container.shift(a)
+        return `antrian ${a} telah dihapus`
+
     }
 
     getAllElements() {
@@ -34,13 +37,16 @@ class Queue {
 const queue = new Queue();
 
 console.log(queue.enqueque(1));
-console.log(queue.enqueque(2));
+console.log(queue.enqueque(1));
 console.log(queue.enqueque(3));
 console.log(queue.enqueque(4));
+console.log(queue.enqueque(5));
+console.log(queue.enqueque(5));
 console.log(queue.enqueque(5));
 
 console.log(queue.getAllElements());
 
-console.log(queue.dequeeue());
+console.log(queue.dequeeue(1));
+console.log(queue.dequeeue(2));
 
 console.log(queue.getAllElements());
