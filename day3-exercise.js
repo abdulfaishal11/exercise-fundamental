@@ -175,9 +175,9 @@ console.log(sortNumber.sort().join(' '))
     const middle = numb1 + numb2 + numb3 - smallest - largest
 
     console.log(`${smallest}, ${middle}, ${largest}`)
-
-
-
+let satu = Math.min(2,4,1)
+const min = Math.min(satu)
+console.log(min);
 // 11 - shows 1 if the input is a string  2 if the input is a number, and 3 for others data type.
 let input = "Hello"
 

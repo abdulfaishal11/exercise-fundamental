@@ -24,21 +24,21 @@ if (numbers % 2 === 1) {
 
 // 04 Find the sum of the numbers 1 to N 
 
-let sum = [1,2,3,4,5];
-for (let i=0 ; i <= sum.length ; i++){
-    let+=sum[i]
-}
-console.log(`1+2+3+4+5 = ${sum}`)
+// let sum = [1,2,3,4,5];
+// for (let i=0 ; i <= sum.length ; i++){
+//     let+=sum[i]
+// }
+// console.log(`1+2+3+4+5 = ${sum}`)
 
-// 05 Find factorial of a number 
-let summary = [4,3,2,1];
-for (let i=0 ; i <= summary.length ; i++) {
-    i*=summary[i]
-}
-console.log(`4x3x2x1 =  ${summary}`);
+// // 05 Find factorial of a number 
+// let summary = [4,3,2,1];
+// for (let i=0 ; i <= summary.length ; i++) {
+//     i*=summary[i]
+// }
+// console.log(`4x3x2x1 =  ${summary}`);
 
 // First Name Fibonnaci numbers
-const n =15;
+const n =5;
 
 let a=0;
 let b=1;
@@ -49,4 +49,25 @@ for (let i=0 ; i<n ; i++) {
 }
 console.log(a)
 
+var fibGenerator = function(n) {
+
+let a=0;
+let b=1;
+for (let i=0 ; i<n ; i++) {
+    let next = a+b ;
+    a=b;
+    b=next;
+};
+return n
+}
+
+const gen = fibGenerator(15)
+console.log(gen);
+
+
+/**
+ * const gen = fibGenerator();
+ * gen.next().value; // 0
+ * gen.next().value; // 1
+ */
 
